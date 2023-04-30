@@ -1,5 +1,5 @@
 # AlphaShop - React
-!(AC\3\my-app\public\螢幕擷取畫面 2023-04-30 195454.png)
+!(https://github.com/quick123835/ALPHA-SHOP/blob/main/public/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-04-30%20195454.png)
 
 ## Welcome
 這是一份基於 React 框架製作的「結帳畫面」

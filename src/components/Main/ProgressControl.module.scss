@@ -1,0 +1,50 @@
+.progressControlContainer {
+    position: relative;
+    margin-top: 8rem;
+    margin-bottom: 40px;
+}
+
+section .buttonGroup {
+    padding-top: 24px;
+    border-top: 1px solid #c0c0ca;
+
+    button {
+        display: flex;
+        align-items: center;
+        height: 46px;
+        font-family: Inter, sans-serif;
+        font-size: 14px;
+        border-radius: 8px;
+        border-width: 0px;
+        padding: 0px;
+
+        & > .svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        &.prev {
+            background-color: transparent;
+            line-height: 20px;
+            font-weight: 400;
+            color: #000000;
+
+            > svg {
+                margin-right: 12px;
+            }
+        }
+        &.next {
+            justify-content: center;
+            width: 174px;
+            font-weight: 500;
+            line-height: 17px;
+            background: rgb(253, 127, 148);
+            color: #FFFFFF;
+            margin-left: auto;
+
+            > svg {
+                margin-left: 12px;
+            }
+        }
+    }
+}

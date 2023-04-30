@@ -1,0 +1,15 @@
+.mainContainer{
+    width:80%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+.mainLeft{
+    display:grid;
+    grid-template-columns: 1fr*6;
+    grid-template-rows: 1fr*3; 
+}
+
+.formContainer{
+    margin-top: 64px;
+}

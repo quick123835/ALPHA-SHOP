@@ -1,0 +1,20 @@
+.cartContainer{
+    border:1px solid rgb(233, 227, 227);
+    padding-top:2rem;
+    padding-left:2rem;
+    height: 100%;
+}
+
+.cartTitle{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.cartInfo{
+    border-top:1px solid rgb(233, 227, 227);
+    margin-top:2rem;
+    .text{
+        margin-top:20px;
+        font-weight:550;
+    }
+}

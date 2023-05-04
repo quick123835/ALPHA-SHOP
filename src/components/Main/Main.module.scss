@@ -3,13 +3,34 @@
     margin:0 auto;
     display:grid;
     grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto 50px;
+    grid-template-areas: 
+        "stepProgress none"
+        "mainLeft mainRight"
+        "space space"
+    ;
 }
 .mainLeft{
+    grid-area:mainLeft;
     display:grid;
     grid-template-columns: 1fr*6;
     grid-template-rows: 1fr*3; 
 }
 
+.mainRight{
+    grid-area:mainRight;
+    margin-top: 64px;
+    margin-left:64px;
+}
+
 .formContainer{
     margin-top: 64px;
+}
+
+.stepProgressContainer{
+    grid-area: stepProgress;
+}
+
+.cartContainer{
+    padding:14px;
 }

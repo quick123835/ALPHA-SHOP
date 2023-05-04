@@ -4,7 +4,7 @@ import { HiArrowLongRight } from "react-icons/hi2";
 
 function AddressBtn(){
     return(
-        <section class="button-group col col-12" className={styles.buttonGroup} data-phase="address">
+        <section className={styles.buttonGroup} data-phase="address">
             <button class="next" className={styles.next}>
                 下一步
                 <HiArrowLongRight />

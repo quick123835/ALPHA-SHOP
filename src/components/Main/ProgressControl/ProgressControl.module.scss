@@ -1,7 +1,10 @@
 .progressControlContainer {
     position: relative;
     margin-top: 8rem;
-    margin-bottom: 40px;
+    display:flex;
+    flex-flow:column;
+    
+
 }
 
 section .buttonGroup {

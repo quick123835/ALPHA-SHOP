@@ -1,0 +1,33 @@
+.navMenu{
+    height: 80px; 
+    display:flex;
+    justify-content: space-between;
+}
+
+.cursorPoint:hover{
+    cursor: pointer;
+}
+
+.navList{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    .navLink{
+        font-weight: 700;
+        line-height: 24px;
+        color: var(--main-text);
+        text-decoration: none;
+    }
+    .navIcon{
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.headerLogoContainer{
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    width: 100%;
+    top:10px;
+}

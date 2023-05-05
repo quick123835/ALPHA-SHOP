@@ -41,7 +41,7 @@ export default function NavbarMenu(){
                 {/* <!-- moon --> */}
                     <BsMoon className={`${styles.navIcon} ${styles.cursorPoint}`}/>              
                 {/* <!-- sun --> */}
-                    <BsSun className={`${styles.navIcon} ${styles.cursorPoint}`}/>
+                    <BsSun className={`${styles.navIcon} ${styles.cursorPoint}`} />
                 </li>
             </ul>
         </nav>

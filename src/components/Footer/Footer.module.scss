@@ -1,0 +1,28 @@
+.siteFooter{
+    background-color: rgb(245, 245, 245);
+}
+.footerContainer{
+    width: 80%;
+    margin:0 auto;
+    display:flex;
+    justify-content: space-between;
+    padding:3rem;
+}
+.footerSection{
+    display:flex;
+    flex-flow:column;
+    .sectionTitle{
+        font-weight: 700;
+        font-size:1.5rem;
+        margin-bottom: 1.2rem;
+    }
+    .pageLink{
+        margin-bottom: 8px;
+        font-weight: normal;
+        line-height: 17px;
+        text-decoration: none;
+        cursor: pointer;
+        color:gray;
+        font-weight: 550;
+    }
+}

@@ -24,7 +24,7 @@ const items = [
 function Products({info}){
   const products = items.map(item => {
     return(
-      <div id={item.id} className={`${styles.productContainer}`} data-count="0" data-price={item.price}>
+      <div key={item.id} className={`${styles.productContainer}`} data-count="0" data-price={item.price}>
               <img className={`${styles.imgContainer}`} src={item.img} />
               <div  className={`${styles.productInfo}`}>
                 <div className={`${styles.productName}`}>{item.name} </div>

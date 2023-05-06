@@ -5,7 +5,7 @@ import { HiArrowLongRight } from "react-icons/hi2";
 function AddressBtn(){
     return(
         <section className={styles.buttonGroup} data-phase="address">
-            <button class="next" className={styles.next}>
+            <button className={styles.next}>
                 下一步
                 <HiArrowLongRight />
             </button>
@@ -15,12 +15,12 @@ function AddressBtn(){
 
 function ShippingBtn(){
     return(
-        <section class="button-group col col-12" data-phase="shipping">
-            <button class="prev">
+        <section className="button-group col col-12" data-phase="shipping">
+            <button className="prev">
                 <HiArrowLongLeft />
                 上一步
              </button>
-            <button class="next">
+            <button className="next">
                 下一步
                 <HiArrowLongRight />
             </button>
@@ -30,12 +30,12 @@ function ShippingBtn(){
 
 function CreditCardBtn(){
     return(
-        <section class="button-group col col-12" data-phase="credit-card">
-            <button class="prev">
+        <section className="button-group col col-12" data-phase="credit-card">
+            <button className="prev">
                 <HiArrowLongLeft />
                 上一步
             </button>
-            <button class="next">
+            <button className="next">
                 確認下單
             </button>
         </section>  
@@ -47,7 +47,7 @@ function CreditCardBtn(){
 export default function ProgressControl(){
     return(
         <>
-            <section class="progress-control-container col col-lg-6 col-sm-12" className={`${styles.progressControlContainer}`}>
+            <section className={`${styles.progressControlContainer}`}>
                 <AddressBtn />
                 {/* <ShippingBtn /> */}
                 {/* <CreditCardBtn /> */}

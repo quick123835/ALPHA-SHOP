@@ -9,34 +9,34 @@ export default function Step1(){
                 <div className={`${styles.row}`}>
                   <div className={`${styles.called} ${styles.inputGroup}`}>
                     <div className={styles.inputLabel}>稱謂</div>
-                    <div class="select-container">
-                      <select>
-                        <option value="mr" selected>先生</option>
+                    <div className="select-container">
+                      <select name="selectSex" default="先生">
+                        <option value="mr">先生</option>
                         <option value="ms">女士</option>
                         <option value="mx">不明</option>
                       </select>
                     </div>
                   </div>
-                  <div class="input-group input-w-lg-4 input-w-sm-s2" className={styles.name}>
+                  <div className={styles.name}>
                     <div className={styles.inputLabel}>姓名</div>
                     <input type="text" placeholder="請輸入姓名" />
                   </div>
                 </div>
                 <div className={`${styles.row}`}>
-                  <div class="input-group input-w-lg-3 input-w-sm-full" className={styles.tel}>
+                  <div className={styles.tel}>
                     <div className={styles.inputLabel}>電話</div>
                     <input type="tel" placeholder="請輸入行動電話" />
                   </div>
-                  <div class="input-group input-w-lg-3 input-w-sm-full" className={styles.email}>
+                  <div className={styles.email}>
                     <div className={styles.inputLabel}>Email</div>
                     <input type="email" placeholder="請輸入電子郵件" />
                   </div>
                 </div>
                 <div className={`${styles.row}`}>
-                  <div class="input-group input-w-lg-2 input-w-sm-full" className={styles.city}>
+                  <div className={styles.city}>
                     <div className={styles.inputLabel}>縣市</div>
-                    <div class="select-container">
-                      <select required>
+                    <div className="select-container">
+                      <select required default="請選擇縣市">
                         <option value="">請選擇縣市</option>
                         <option value="KLU">基隆市</option>
                         <option value="TPH">新北市</option>
@@ -70,7 +70,7 @@ export default function Step1(){
                       </select>
                     </div>
                   </div>
-                  <div class="input-group input-w-lg-4 input-w-sm-full" className={styles.address}>
+                  <div className={styles.address}>
                     <div className={styles.inputLabel}>地址</div>
                     <input type="text" placeholder="請輸入地址" />
                   </div>

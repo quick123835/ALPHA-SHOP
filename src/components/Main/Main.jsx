@@ -1,12 +1,23 @@
-import Step1 from './Steps/Step1'
-import Step2 from './Steps/Step2'
-import Step3 from './Steps/Step3'
+import Steps from './Steps/Steps'
 import StepProgress from './StepProgress/StepProgress'
 import ProgressControl from './ProgressControl/ProgressControl'
 import styles from './Main.module.scss'
 import Cart from './Cart/Cart'
+import { useState } from 'react';
+
 
 export default function Main(){
+    const [step , setStep] = useState(1)
+
+
+    function handleNextStep(){
+        setStep(step+1)
+    }
+
+    function handlePreStep(){
+        setStep(step-1)
+    }
+
     return(
         <div className={`${styles.mainContainer}`}>
             <div className={styles.stepProgressContainer}>
@@ -15,12 +26,16 @@ export default function Main(){
             <div className={`${styles.mainLeft}`}>
                 <div className={styles.registerContainer}>
                     <div className={styles.formContainer}>
-                        <Step1/>
-                        {/* <Step2/> */}
-                        {/* <Step3/> */}
+                        <Steps 
+                            step={step}
+                        />
                     </div>
                 </div>
-                <ProgressControl />
+                <ProgressControl  
+                    step={step}
+                    onNextStep={handleNextStep}
+                    onPreStep={handlePreStep}
+                />
             </div>
             <div className={`${styles.mainRight}`}>
                 <Cart />

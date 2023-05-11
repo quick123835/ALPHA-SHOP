@@ -10,6 +10,7 @@
 section .buttonGroup {
     padding-top: 24px;
     border-top: 1px solid #c0c0ca;
+    display:flex;
 
     button {
         display: flex;
@@ -27,9 +28,9 @@ section .buttonGroup {
         }
 
         &.prev {
-            background-color: transparent;
-            line-height: 20px;
-            font-weight: 400;
+            background-color: white;
+            font-weight: 500;
+            line-height: 17px;
             color: #000000;
 
             > svg {

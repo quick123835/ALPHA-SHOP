@@ -20,35 +20,21 @@ let saleThings = [
   },
 ]
 
-function Products({id , name , img , price , quantity}){
-  const [itemList , setItemList]=useState(saleThings)
-  function handlePlusClick(itemId){
-    const newItemList = itemList.map(item => {
-      if(itemId == item.id){
-        return {
-          ...item,
-          quantity: item.quantity+1
-        }
-      }else{
-        return item
-      }
-    })
-    setItemList(newItemList)
+function Products({id , name , img , price , quantity , onCalculate}){
+  const [count , setCount]=useState(0)
+
+  function handlePlusClick(){
+    setCount(count+1)
+    onCalculate(price)
   }
 
-  function handleMinusClick(itemId){
-    const newItemList = itemList.map(item => {
-      if(itemId == item.id && item.quantity > 0){
-        return{
-          ...item,
-          quantity: item.quantity-1
-        }
-      }else{
-        return item
-      }
-    })
-    setItemList(newItemList)
+  function handleMinusClick(){
+    if(count > 0){
+      setCount(count - 1 )
+      onCalculate(-price)
+    }
   }
+
 
   return(
     <div key={id} className={`${styles.productContainer}`} data-count="0" data-price={price}>
@@ -57,9 +43,9 @@ function Products({id , name , img , price , quantity}){
             <div className={`${styles.productName}`}>{name} </div>
             <div>
                 <div className={`${styles.productControl}`}>
-                <BiMinus className={`${styles.cartIcon}`} onClick={() =>{handleMinusClick(id)}} />
-                <span className={`${styles.productCount}`}>{quantity}</span>
-                <BiPlus className={`${styles.cartIcon}`} onClick={() =>{handlePlusClick(id)}} />
+                <BiMinus className={`${styles.cartIcon}`}  onClick={handleMinusClick} />
+                <span className={`${styles.productCount}`}>{count}</span>
+                <BiPlus className={`${styles.cartIcon}`} onClick={handlePlusClick} />
                 </div>
             </div>
             <div className={`${styles.price}`}>${price}</div>
@@ -72,17 +58,21 @@ function Products({id , name , img , price , quantity}){
 
 
 export default function Cart(){
+  const [ttlCost , setTtlCost] = useState(0)
+  function handleCalculate(price){
+    setTtlCost(ttlCost + price)
+  }
     return(
         <section className={`${styles.cartContainer}`}>
             <h3 className={`${styles.cartTitle}`}>購物籃</h3>
-            {saleThings.map(data => <Products key={data.id} {...data} />)}
+            {saleThings.map(data => <Products key={data.id} {...data} onCalculate={handleCalculate}/>)}
             <section className={`${styles.cartInfo} ${styles.shipping}`}>
                 <div className={`${styles.text}`}>運費</div>
-                <div className={styles.amount}>0</div>
+                <div className={styles.amount}>免費</div>
                 </section>
             <section className={`${styles.cartInfo} ${styles.total}`}>
                 <div className={`${styles.text}`}>小計</div>
-                <div className={styles.amount}>0</div>
+                <div className={styles.amount}>${ttlCost}</div>
             </section>
         </section>
         

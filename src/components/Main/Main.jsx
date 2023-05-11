@@ -8,7 +8,15 @@ import { useState } from 'react';
 
 export default function Main(){
     const [step , setStep] = useState(1)
-
+    const [freight , setFreight] = useState('免費')
+    
+    function handleFreightChangeDHL(){
+        setFreight('500')
+        console.log(freight)
+    }
+    function handleFreightChangeNormal(){
+        setFreight('免費')
+    }
 
     function handleNextStep(){
         setStep(step+1)
@@ -28,6 +36,9 @@ export default function Main(){
                     <div className={styles.formContainer}>
                         <Steps 
                             step={step}
+                            freight={freight}
+                            onChangeDHL={handleFreightChangeDHL}
+                            onChangeNormal={handleFreightChangeNormal}
                         />
                     </div>
                 </div>

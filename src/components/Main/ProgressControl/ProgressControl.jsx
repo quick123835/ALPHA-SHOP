@@ -1,9 +1,16 @@
 import styles from './ProgressControl.module.scss'
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { HiArrowLongRight } from "react-icons/hi2";
+import { useMainInfo } from '../../../contexts/MainContext';
 
 function ProgressControl({step , onNextStep , onPreStep}){
-    if(step == 1){
+    const mainInfo = useMainInfo()
+
+    const handleClick = () => {
+        console.log(mainInfo.info)
+    }
+
+    if(step === 1){
         return(
             <section className={`${styles.progressControlContainer}`}>
                 <section className={styles.buttonGroup} data-phase="address">
@@ -14,7 +21,7 @@ function ProgressControl({step , onNextStep , onPreStep}){
                 </section>
             </section>
         )
-    }else if(step == 2){
+    }else if(step === 2){
         return(
             <section className={`${styles.progressControlContainer}`}>
                 <section className={styles.buttonGroup} data-phase="shipping">
@@ -29,7 +36,7 @@ function ProgressControl({step , onNextStep , onPreStep}){
                 </section>
             </section>
         )
-    }else if(step == 3){
+    }else if(step === 3){
         return(
             <section className={`${styles.progressControlContainer}`}>
                 <section className={styles.buttonGroup} data-phase="credit-card">
@@ -37,7 +44,7 @@ function ProgressControl({step , onNextStep , onPreStep}){
                         <HiArrowLongLeft />
                         上一步
                     </button>
-                    <button className={styles.next}>
+                    <button className={styles.next} onClick={handleClick}>
                         確認下單
                     </button>
                 </section>  

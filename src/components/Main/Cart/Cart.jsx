@@ -2,23 +2,9 @@ import styles from './Cart.module.scss'
 import {useState} from 'react'
 import {BiMinus} from 'react-icons/bi' 
 import {BiPlus} from "react-icons/bi"
+import { useCart } from '../../../contexts/CartContext'
+import { useMainInfo } from '../../../contexts/MainContext'
 
-let saleThings = [
-  {
-    id: '1',
-    name: '貓咪罐罐',
-    img: 'https://picsum.photos/300/300?text=1',
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: '2',
-    name: '貓咪干干',
-    img: 'https://picsum.photos/300/300?text=2',
-    price: 200,
-    quantity: 1,
-  },
-]
 
 function Products({id , name , img , price , quantity , onCalculate}){
   const [count , setCount]=useState(0)
@@ -59,9 +45,18 @@ function Products({id , name , img , price , quantity , onCalculate}){
 
 export default function Cart(){
   const [ttlCost , setTtlCost] = useState(0)
+  const saleThings = useCart()
   function handleCalculate(price){
     setTtlCost(ttlCost + price)
+    mainInfo.setInfo(mainInfo.info = {
+      ...mainInfo.info,
+      total:(ttlCost+price)
+    })
   }
+
+  const mainInfo = useMainInfo()
+
+
     return(
         <section className={`${styles.cartContainer}`}>
             <h3 className={`${styles.cartTitle}`}>購物籃</h3>

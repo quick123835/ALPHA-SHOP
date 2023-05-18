@@ -4,27 +4,23 @@ import ProgressControl from './ProgressControl/ProgressControl'
 import styles from './Main.module.scss'
 import Cart from './Cart/Cart'
 import { useState } from 'react';
+import { useMainInfo } from '../../contexts/MainContext'
 
 
 export default function Main(){
+    // step control
     const [step , setStep] = useState(1)
-    const [freight , setFreight] = useState('免費')
-    
-    function handleFreightChangeDHL(){
-        setFreight('500')
-        console.log(freight)
-    }
-    function handleFreightChangeNormal(){
-        setFreight('免費')
-    }
-
     function handleNextStep(){
         setStep(step+1)
     }
-
     function handlePreStep(){
         setStep(step-1)
     }
+    
+    // main control
+    const response = useMainInfo()
+    const [mainInfo , setMainInfo] = useState(response)
+
 
     return(
         <div className={`${styles.mainContainer}`}>
@@ -36,9 +32,6 @@ export default function Main(){
                     <div className={styles.formContainer}>
                         <Steps 
                             step={step}
-                            freight={freight}
-                            onChangeDHL={handleFreightChangeDHL}
-                            onChangeNormal={handleFreightChangeNormal}
                         />
                     </div>
                 </div>

@@ -1,7 +1,36 @@
 import styles from './Steps.module.scss'
+import { useMainInfo } from '../../../contexts/MainContext'
 
 
 function Steps({step ,freight,onChangeDHL , onChangeNormal}){
+    const mainInfo = useMainInfo()
+
+    const handleNameChange = (e) => {
+        mainInfo.setInfo({
+            ...mainInfo.info,
+            name:e.target.value
+        })
+    }
+    const handleCreditNumChange = (e) => {
+        mainInfo.setInfo({
+            ...mainInfo.info,
+            creditNum:e.target.value
+        })
+    }
+    const handletimeBarChange = (e) => {
+        mainInfo.setInfo({
+            ...mainInfo.info,
+            timeBar:e.target.value
+        })
+    }
+    const handlecvcChange = (e) => {
+        mainInfo.setInfo({
+            ...mainInfo.info,
+            cvc:e.target.value
+        })
+    }
+
+
     if(step == 1){
         return(
             <>
@@ -123,23 +152,23 @@ function Steps({step ,freight,onChangeDHL , onChangeNormal}){
                         <div className={styles.row}>
                             <div className={styles.creditName}>
                                 <div className={styles.inputLabel}>持卡人姓名</div>
-                                <input type="text" placeholder="John Doe" />
+                                <input type="text" placeholder="John Doe" name='name' onChange={handleNameChange} />
                             </div>
                         </div>
                         <div className={styles.row}>
                             <div className={styles.creditNum}>
                                 <div className={`${styles.inputLabel} `}>卡號</div>
-                                <input type="text" placeholder="1111 2222 3333 4444" />
+                                <input type="text" placeholder="1111 2222 3333 4444" name='creditNum' onChange={handleCreditNumChange} />
                             </div>
                         </div>
                         <div className={styles.row}>
                             <div className={styles.timeBar}>
                                 <div  className={styles.inputLabel}>有效期限</div>
-                                <input type="text" placeholder="MM/YY" />
+                                <input type="text" placeholder="MM/YY" name='timeBar' onChange={handletimeBarChange} />
                             </div>
                             <div className={styles.cvc}>
                                 <div className={styles.inputLabel}>CVC / CCV</div>
-                                <input type="text" placeholder="123" />
+                                <input type="text" placeholder="123" name='cvc' onChange={handlecvcChange} />
                             </div>
                         </div>
                     </section>

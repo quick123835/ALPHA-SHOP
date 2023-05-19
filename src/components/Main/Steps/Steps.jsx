@@ -117,7 +117,7 @@ function Steps({step ,freight,onChangeDHL , onChangeNormal}){
                 <h3 className={styles.formTitle}>運送方式</h3>
                 <section className={styles.formBody}>
                     <label data-price="0" className={`${styles.radioGroup}`}>
-                    <input id="shipping-standard" type="radio" name="shipping" checked onChange={onChangeNormal} />
+                    <input id="shipping-standard" type="radio" name="shipping" defaultChecked onChange={onChangeNormal} />
                     <div className={`${styles.radioInfo}`}>
                         <div className={`${styles.col}`}>
                         <div className={styles.text}>標準運送</div>
